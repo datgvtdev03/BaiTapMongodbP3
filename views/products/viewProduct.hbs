@@ -1,0 +1,63 @@
+<div class="container">
+  {{!-- <a href="/product/{{products._id}}" class="btn btn-success">Thêm sản phẩm</a>
+  <h3 class="text-center">Danh sách sản phẩm</h3> --}}
+
+    <div class="table-title">
+        <div class="row">
+          <div class="col-sm-8">
+            <h2>Danh sách sản phẩm</h2>
+          </div>
+          <div class="col-sm-4">
+            <a href="/product/{{products._id}}" class="btn btn-info add-new">Thêm sản phẩm</a>
+          </div>
+        </div>
+      </div>
+
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Tên sản phẩm</th>
+        <th>Giá sản phẩm</th>
+        <th>Số lượng sản phẩm</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+
+    {{#each products}}
+    <tr>
+      <td>{{this.productName}}</td>
+      <td>{{this.productPrice}}</td>
+      <td>{{this.productQuantity}}</td>
+      <td>
+        <a href="/product/edit/{{this._id}}" class="btn btn-success">Sửa</a>
+        <a href="/product/delete/{{this._id}}" onclick='return confirm("Are your sure?")' class="btn btn-danger">Xoá</a>
+      </td>
+      
+    </tr>
+    {{/each}}
+
+  </table>
+</div>
+
+<style>
+ 
+  .table-title {
+    margin: 0 0 10px;
+  }
+
+  .table-title h2 {
+    margin: 6px 0 0;
+    font-size: 32px;
+  }
+
+  .table-title .add-new {
+    float: right;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: none;
+    min-width: 100px;
+    border-radius: 50px;
+  }
+
+</style>

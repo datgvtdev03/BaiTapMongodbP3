@@ -1,0 +1,21 @@
+<h3 class="text-center">{{viewTitle}}</h3>
+<form method="POST" action="/product/add" autocomplete="off">
+  <input type="hidden" name="id" value="{{product._id}}">
+  <div class="form-group">
+    <label for="">Tên sản phẩm:</label>
+    <input type="text" class="form-control" placeholder="Tên sản phẩm" name="productName" value="{{product.productName}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="">Giá sản phẩm:</label>
+    <input type="number" class="form-control" placeholder="Giá sản phẩm" name="productPrice" value="{{product.productPrice}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="">Số lượng:</label>
+    <input type="number" class="form-control" placeholder="Số lượng" name="productQuantity" value="{{product.productQuantity}}" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">SAVE</button>
+  <a href="/product/list" class="btn btn-success">LIST PRODUCT</a>
+</form>
